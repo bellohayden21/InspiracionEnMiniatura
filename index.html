@@ -1,222 +1,317 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Inspiración en Miniatura</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #6FEBDB; /* fondo turquesa */
-            color: #361702; /* texto marrón oscuro */
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: #E58DB1; /* header rosa */
-            color: white;
-            padding: 20px 0;
-            text-align: center;
-            font-size: 2em;
-            font-weight: bold;
-            letter-spacing: 2px;
-        }
-        main {
-            max-width: 900px;
-            margin: 20px auto;
-            padding: 0 20px;
-        }
-        h1, h2, h3 {
-            color: #361702; /* marrón oscuro */
-        }
-        h2 {
-            margin-top: 40px;
-        }
-        /* Productos */
-        .productos {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin-top: 20px;
-        }
-        .producto {
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 6px rgba(54, 23, 2, 0.1);
-            width: 200px;
-            padding: 15px;
-            text-align: center;
-        }
-        .producto img {
-            max-width: 100%;
-            border-radius: 6px;
-        }
-        .producto h3 {
-            margin: 15px 0 10px;
-            font-size: 1.2em;
-            color: #E58DB1; /* rosa */
-        }
-        .producto p {
-            font-size: 0.9em;
-            color: #361702;
-        }
-        /* Sección Fotos */
-        .galeria {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin-top: 20px;
-        }
-        .galeria img {
-            width: 250px;
-            height: 250px;
-            object-fit: cover;
-            border-radius: 10px;
-            box-shadow: 0 2px 8px rgba(54, 23, 2, 0.2);
-        }
-        /* Comentarios */
-        .comentarios {
-            background: white;
-            border-radius: 10px;
-            padding: 20px;
-            margin-top: 20px;
-            box-shadow: 0 2px 6px rgba(54, 23, 2, 0.1);
-        }
-        .comentario {
-            border-bottom: 1px solid #E58DB1;
-            padding-bottom: 10px;
-            margin-bottom: 10px;
-        }
-        .comentario:last-child {
-            border: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
-        }
-        .comentario p {
-            font-style: italic;
-            color: #361702;
-        }
-        .comentario span {
-            font-weight: bold;
-            color: #E58DB1;
-        }
-        /* Precios */
-        .precio {
-            background: white;
-            border-radius: 10px;
-            padding: 20px;
-            margin-top: 20px;
-            text-align: center;
-            box-shadow: 0 2px 6px rgba(54, 23, 2, 0.1);
-            font-size: 1.5em;
-            color: #E58DB1;
-            font-weight: bold;
-        }
-        /* Contacto */
-        .contacto {
-            margin-top: 20px;
-            font-size: 1em;
-            color: #361702;
-        }
-        a {
-            color: #361702;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        footer {
-            background-color: #E58DB1;
-            color: white;
-            text-align: center;
-            padding: 15px 0;
-            margin-top: 50px;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inspiración en Miniatura – Arte en pequeño formato</title>
+  <meta name="description" content="Mini cuadros hechos a mano en arcilla. Cada pieza es única y creada con amor por Inspiración en Miniatura." />
+  <meta name="theme-color" content="#E58DB1" />
+
+  <!-- Tipografía moderna y elegante -->
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&family=Alex+Brush&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --rosa: #E58DB1;
+      --turquesa: #6FEBDB;
+      --marron: #361702;
+      --blanco: #FFFFFF;
+      --shadow: 0 6px 18px rgba(0,0,0,0.08);
+      --radius: 18px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Quicksand', sans-serif;
+      color: var(--marron);
+      background-color: var(--turquesa);
+    }
+
+    /* --- NAV --- */
+    nav {
+      background-color: var(--rosa);
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      box-shadow: var(--shadow);
+    }
+    .nav-inner {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 20px;
+    }
+    .brand {
+      font-family: "Alex Brush", cursive;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+    .nav-links {
+      display: flex;
+      gap: 16px;
+    }
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 8px 12px;
+      border-radius: 12px;
+    }
+    .nav-links a:hover {
+      background: rgba(255,255,255,0.2);
+    }
+
+    /* --- HEADER / HERO --- */
+    header {
+      text-align: center;
+      padding: 80px 20px 60px;
+      background: radial-gradient(circle at top left, var(--rosa) 0%, transparent 60%),
+                  radial-gradient(circle at bottom right, var(--turquesa) 0%, transparent 60%),
+                  white;
+      position: relative;
+      overflow: hidden;
+    }
+    header h1 {
+      font-family: "Alex Brush", cursive;
+      font-size: 3rem;
+      color: var(--marron);
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto;
+      color: #42250a;
+    }
+
+    /* --- PRODUCTOS --- */
+    section {
+      max-width: 1100px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+    h2.section-title {
+      font-family: 'Quicksand', sans-serif;
+      font-size: 2rem;
+      text-align: center;
+      color: var(--marron);
+      margin-bottom: 10px;
+    }
+    p.section-sub {
+      text-align: center;
+      color: #4b2b11;
+      margin-bottom: 30px;
+    }
+    .productos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      justify-items: center;
+    }
+    .producto {
+      background: white;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      text-align: center;
+      padding-bottom: 15px;
+      transition: transform 0.2s;
+    }
+    .producto:hover {
+      transform: translateY(-5px);
+    }
+    .producto img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+    .producto h3 {
+      color: var(--rosa);
+      font-size: 1.3em;
+      margin: 12px 0 6px;
+    }
+    .producto p {
+      padding: 0 10px;
+      font-size: 0.95em;
+    }
+
+    /* --- GALERÍA --- */
+    .galeria {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .galeria img {
+      width: 250px;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 14px;
+      box-shadow: var(--shadow);
+      transition: transform 0.2s;
+    }
+    .galeria img:hover {
+      transform: scale(1.05);
+    }
+
+    /* --- COMENTARIOS --- */
+    .comentarios {
+      background: white;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 30px;
+      margin-top: 40px;
+    }
+    .comentario {
+      border-bottom: 1px solid var(--rosa);
+      padding: 12px 0;
+    }
+    .comentario:last-child {
+      border: none;
+    }
+    .comentario p {
+      font-style: italic;
+      margin-bottom: 6px;
+    }
+    .comentario span {
+      font-weight: bold;
+      color: var(--rosa);
+    }
+
+    /* --- PRECIO --- */
+    .precio {
+      background: linear-gradient(135deg, var(--rosa), var(--turquesa));
+      color: white;
+      border-radius: var(--radius);
+      padding: 25px;
+      font-size: 1.4em;
+      font-weight: 700;
+      text-align: center;
+      box-shadow: var(--shadow);
+      margin: 40px 0;
+    }
+
+    /* --- CONTACTO --- */
+    .contacto {
+      text-align: center;
+    }
+    .contacto a {
+      color: var(--marron);
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .contacto a:hover {
+      text-decoration: underline;
+    }
+
+    /* --- FOOTER --- */
+    footer {
+      background: var(--rosa);
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 60px;
+      font-size: 0.9em;
+      box-shadow: var(--shadow);
+    }
+  </style>
 </head>
 <body>
-    <header>
-        Inspiración en Miniatura
-    </header>
-    <main>
-        <section>
-            <h1>Bienvenido a Inspiración en Miniatura</h1>
-            <p>Descubre la belleza de los mini cuadritos hechos a mano en arcilla. Cada pieza es única y creada con mucho amor y dedicación, perfecta para decorar tu espacio o regalar a alguien especial.</p>
-        </section>
 
-        <section>
-            <h2>Nuestros Productos</h2>
-            <div class="productos">
-                <div class="producto">
-                    <img src="imagenesinspiracionminiatura/foto14.jpeg" alt="Mini Cuadro 1" />
-                    <h3>Mini Cuadro Flor</h3>
-                    <p>Pequeña obra de arte con diseño floral en tonos cálidos.</p>
-                </div>
-                <div class="producto">
-                    <img src="imagenesinspiracionminiatura/foto11.jpeg" alt="Mini Cuadro 2" />
-                    <h3>Mini Cuadro Geométrico</h3>
-                    <p>Diseño moderno y minimalista para los amantes del arte abstracto.</p>
-                </div>
-                <div class="producto">
-                    <img src="imagenesinspiracionminiatura/foto3.jpeg" alt="Mini Cuadro 3" />
-                    <h3>Mini Cuadro Naturaleza</h3>
-                    <p>Inspirado en elementos naturales y texturas orgánicas.</p>
-                </div>
-            </div>
-        </section>
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <div class="brand">Inspiración en Miniatura</div>
+      <div class="nav-links">
+        <a href="#productos">Productos</a>
+        <a href="#galeria">Galería</a>
+        <a href="#comentarios">Comentarios</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+    </div>
+  </nav>
 
-        <!-- Nueva sección Fotos -->
-        <section>
-            <h2>Galería de Fotos</h2>
-            <div class="galeria">
-                <img src="imagenesinspiracionminiatura/foto5.jpeg" alt="Foto 1" />
-                <img src="imagenesinspiracionminiatura/foto8.jpeg" alt="Foto 2" />
-                <img src="imagenesinspiracionminiatura/foto9.jpeg" alt="Foto 3" />
-                <img src="imagenesinspiracionminiatura/foto12.jpeg" alt="Foto 4" />
-            </div>
-        </section>
+  <!-- HERO -->
+  <header id="inicio">
+    <h1>Inspiración en Miniatura</h1>
+    <p>Descubre la belleza de los mini cuadritos hechos a mano en arcilla. Cada pieza es única, creada con amor y detalle, perfecta para decorar o regalar.</p>
+  </header>
 
-        <!-- Nueva sección Comentarios -->
-        <section>
-            <h2>Comentarios de Clientes</h2>
-            <div class="comentarios">
-                <div class="comentario">
-                    <p>"Me encantaron los mini cuadritos, son hermosos y muy bien hechos."</p>
-                    <span>- Ana P.</span>
-                </div>
-                <div class="comentario">
-                    <p>"Un detalle perfecto para regalar. Muy recomendados."</p>
-                    <span>- Carlos M.</span>
-                </div>
-                <div class="comentario">
-                    <p>"Atención personalizada y piezas únicas. Excelente trabajo."</p>
-                    <span>- Laura R.</span>
-                </div>
-            </div>
-        </section>
+  <!-- PRODUCTOS -->
+  <section id="productos">
+    <h2 class="section-title">Nuestros Productos</h2>
+    <p class="section-sub">Cada mini cuadro cuenta una historia en pequeño formato.</p>
+    <div class="productos">
+      <div class="producto">
+        <img src="imagenesinspiracionminiatura/foto14.jpeg" alt="Mini Cuadro Flor" />
+        <h3>Mini Cuadro Flor</h3>
+        <p>Pequeña obra de arte con diseño floral en tonos cálidos.</p>
+      </div>
+      <div class="producto">
+        <img src="imagenesinspiracionminiatura/foto11.jpeg" alt="Mini Cuadro Geométrico" />
+        <h3>Mini Cuadro Geométrico</h3>
+        <p>Diseño moderno y minimalista para los amantes del arte abstracto.</p>
+      </div>
+      <div class="producto">
+        <img src="imagenesinspiracionminiatura/foto3.jpeg" alt="Mini Cuadro Naturaleza" />
+        <h3>Mini Cuadro Naturaleza</h3>
+        <p>Inspirado en elementos naturales y texturas orgánicas.</p>
+      </div>
+    </div>
+  </section>
 
-        <!-- Nueva sección Precio -->
-        <section>
-            <h2>Precio</h2>
-            <div class="precio">
-                $12.000 por mini cuadrito
-            </div>
-        </section>
+  <!-- GALERÍA -->
+  <section id="galeria">
+    <h2 class="section-title">Galería de Fotos</h2>
+    <div class="galeria">
+      <img src="imagenesinspiracionminiatura/foto5.jpeg" alt="Foto 1" />
+      <img src="imagenesinspiracionminiatura/foto8.jpeg" alt="Foto 2" />
+      <img src="imagenesinspiracionminiatura/foto9.jpeg" alt="Foto 3" />
+      <img src="imagenesinspiracionminiatura/foto12.jpeg" alt="Foto 4" />
+    </div>
+  </section>
 
-        <section class="contacto">
-            <h2>Contacto</h2>
-            <p>¿Interesado en adquirir alguno de nuestros mini cuadritos o hacer un pedido personalizado? Escríbenos:</p>
-            <p>Email: <a href="mailto:contacto@inspiracionminiatura.com">contacto@inspiracionminiatura.com</a></p>
-            <p>Instagram: <a href="https://www.instagram.com/inspiracionminiatura" target="_blank">@inspiracionminiatura</a></p>
-        </section>
-    </main>
-    <footer>
-        &copy; 2025 Inspiración en Miniatura - Todos los derechos reservados
-    </footer>
+  <!-- COMENTARIOS -->
+  <section id="comentarios">
+    <h2 class="section-title">Comentarios de Clientes</h2>
+    <div class="comentarios">
+      <div class="comentario">
+        <p>"Me encantaron los mini cuadritos, son hermosos y muy bien hechos."</p>
+        <span>- Ana P.</span>
+      </div>
+      <div class="comentario">
+        <p>"Un detalle perfecto para regalar. Muy recomendados."</p>
+        <span>- Carlos M.</span>
+      </div>
+      <div class="comentario">
+        <p>"Atención personalizada y piezas únicas. Excelente trabajo."</p>
+        <span>- Laura R.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRECIO -->
+  <section>
+    <h2 class="section-title">Precio</h2>
+    <div class="precio">$12.000 por mini cuadrito</div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto" class="contacto">
+    <h2 class="section-title">Contáctanos</h2>
+    <p>¿Interesado en adquirir nuestros mini cuadros o hacer un pedido personalizado?</p>
+    <p>Email: <a href="mailto:contacto@inspiracionminiatura.com">contacto@inspiracionminiatura.com</a></p>
+    <p>Instagram: <a href="https://www.instagram.com/inspiracionminiatura" target="_blank">@inspiracionminiatura</a></p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2025 Inspiración en Miniatura — Todos los derechos reservados
+  </footer>
+
 </body>
 </html>
-
-
